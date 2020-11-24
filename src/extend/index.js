@@ -3,10 +3,12 @@ Pareant.prototype.home = [];
 function Pareant () {
     this.name = 'zp';
     this.age = 19;
-    this.sex = 'male';
+    this.play =[1,2,3];
 }
 
-Child.prototype = new Pareant();
+// Child.prototype = new Pareant();
+Child.prototype = Object.create(Pareant.prototype);
+Child.prototype.constructor = Child;
 
 function Child () {
     Pareant.call(this);
