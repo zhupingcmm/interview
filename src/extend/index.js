@@ -1,23 +1,19 @@
 
-Pareant.prototype.home = [];
-function Pareant () {
-    this.name = 'zp';
-    this.age = 19;
-    this.play =[1,2,3];
+Parent.prototype.home = [];
+function Parent(){
+    this.name= 'zp'
 }
 
-// Child.prototype = new Pareant();
-Child.prototype = Object.create(Pareant.prototype);
-Child.prototype.constructor = Child;
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constractor = Child;
 
-function Child () {
-    Pareant.call(this);
-    this.sex = 'female';
-    this.classMate = 'cmm'
+function Child(){
+    Parent.call(this);
+    this.sex ='male';
 }
 
 let duocter1 = new Child();
 let duocter2 = new Child();
-duocter1.home.push('ppp');
-console.log(duocter2);
+// duocter1.home.push('ppp');
+console.log(duocter2.home.push('asd'));
 
