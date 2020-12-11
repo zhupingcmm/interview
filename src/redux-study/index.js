@@ -1,9 +1,8 @@
-const {createStore, applyMiddleware, combineReducers} = require('redux');
+const {createStore, combineReducers} = require('./fake-redux');
 
-console.log('sa', createStore)
 
 const loggerMiddleWare = ({dispatch, getState}) =>(next) =>(action) =>{
-    console.log("loggerMiddleWare====",getState())
+    // console.log("loggerMiddleWare====",getState())
     return next(action);
 }
 
@@ -40,13 +39,13 @@ const sharedReducer = (state={age:1}, action) =>{
 const reducers = combineReducers({rootReducer,sharedReducer})
 
 
-const store = createStore(reducers, applyMiddleware(...middleWareList));
-
-console.log("store::", store)
+// const store = createStore(reducers, applyMiddleware(...middleWareList));
+const store = createStore(reducers);
+// console.log("store::", store)
 const unSubscribe = store.subscribe(()=>{console.log("abc")});
 
 store.dispatch({type:'Add'});
 
 
 console.log('state::', store.getState());
-store.getState();
+// store.getState();

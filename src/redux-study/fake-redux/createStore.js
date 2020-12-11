@@ -1,7 +1,12 @@
 
 exports = module.exports = createStore;
 
-function createStore(reducer, preloadedState){
+function createStore(reducer, preloadedState, enhancer){
+
+    // if(enhancer !== undefined){
+    //     enhancer(createStore)(reducer, preloadedState)
+    // }
+
 
     let currentReducer = reducer;
     let currentState = preloadedState;
